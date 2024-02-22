@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>一键补作业神器</title>
+    <link rel="icon" href="http://q1.qlogo.cn/g?b=qq&nk=884256028&s=640" type="image/x-icon">
+    <link rel="shortcut icon" href="http://q1.qlogo.cn/g?b=qq&nk=884256028&s=640" typr="image/x-icon">
+
+    <link type="text/css" rel="stylesheet" href="./css/app.css">
+    <link type="text/css" rel="stylesheet" href="./css/common.css">
+    <link type="text/css" rel="stylesheet" href="./css/zhngjah.css">
+    
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script>  
+        document.addEventListener('DOMContentLoaded', () => {  
+            const audio = document.getElementById("audio");
+            const load = document.querySelector('.load');  
+            swal({  
+                title: '警告',  
+                text: '“阳光”三班专享，禁止外传！',  
+                icon: 'warning',
+                button: '一键补作业',  
+                closeOnClickOutside: false,  
+            })
+            .then(() => {       
+                // 添加事件监听器来处理点击事件  
+                document.body.addEventListener('click', () => {  
+                    load.classList.add('activate')  
+                    const img = document.getElementById("op");  
+                    img.style.display = 'block';  
+                    audio.play()  
+                    document.getElementById("div_support").style.display = 'block';  
+                    document.getElementById("btn-make").style.display = 'block';  
+                })  
+            })  
+        })  
+    </script>
+</head>
+
+<body>
+    <div class="load activate">
+        <img id="op" src="./img/chenze.jpg" style="display: block;">
+    </div>
+
+    <audio id="audio"><source src="./audio/1.mp3"></audio>
+</body>
+</html>
